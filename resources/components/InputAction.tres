@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="InputAction" load_steps=2 format=3 uid="uid://cg3uctd6bdcm"]
+
+[ext_resource type="Script" path="res://resources/component_scripts/input_actions.gd" id="1_hfhvr"]
+
+[resource]
+script = ExtResource("1_hfhvr")

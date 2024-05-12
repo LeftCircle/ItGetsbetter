@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv267dw57fqw5"]
+
+[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_animation_tree.gd" id="1_eao2x"]
+
+[node name="EcsAnimationTree" type="AnimationTree"]
+script = ExtResource("1_eao2x")

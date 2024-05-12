@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="PlayerCharacterComponent" load_steps=2 format=3 uid="uid://ecnd75syuv4g"]
+
+[ext_resource type="Script" path="res://resources/component_scripts/character_component.gd" id="1_hnkmc"]
+
+[resource]
+script = ExtResource("1_hnkmc")
