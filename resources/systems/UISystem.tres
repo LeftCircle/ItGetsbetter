@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UISystem" load_steps=4 format=3 uid="uid://cvjwurr4vetui"]
+
+[ext_resource type="Script" path="res://resources/system_scripts/ui_system.gd" id="1_cv7j2"]
+[ext_resource type="PackedScene" uid="uid://brctro446cl8o" path="res://scenes/components/component_scenes/ecs_ui.tscn" id="2_b0lmg"]
+[ext_resource type="Resource" uid="uid://bwlg7jwfhos12" path="res://resources/components/Abilities.tres" id="3_5vr30"]
+
+[resource]
+script = ExtResource("1_cv7j2")
+required_components = [ExtResource("2_b0lmg"), ExtResource("3_5vr30")]

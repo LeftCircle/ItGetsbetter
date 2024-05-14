@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b2pgwoagy7ki1"]
+[gd_scene load_steps=35 format=3 uid="uid://b2pgwoagy7ki1"]
 
 [ext_resource type="Script" path="res://scenes/entity/entity.gd" id="1_755o5"]
 [ext_resource type="Script" path="res://resources/component_scripts/character_component.gd" id="2_7xgpt"]
@@ -9,7 +9,8 @@
 [ext_resource type="Script" path="res://resources/component_scripts/abilities.gd" id="5_31m7c"]
 [ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_animation_tree.gd" id="5_t8fcu"]
 [ext_resource type="Script" path="res://resources/component_scripts/states.gd" id="6_467m6"]
-[ext_resource type="PackedScene" uid="uid://brctro446cl8o" path="res://scenes/components/component_scenes/ecs_ui.tscn" id="11_cjntf"]
+[ext_resource type="Script" path="res://resources/component_scripts/ui_setter.gd" id="7_g2ijp"]
+[ext_resource type="PackedScene" uid="uid://df3jvb22nlvd3" path="res://scenes/ui/ui.tscn" id="9_ftsh0"]
 
 [sub_resource type="Resource" id="Resource_mhoqv"]
 script = ExtResource("2_7xgpt")
@@ -42,6 +43,9 @@ attack = SubResource("Resource_55oge")
 
 [sub_resource type="Resource" id="Resource_i7gqe"]
 script = ExtResource("6_467m6")
+
+[sub_resource type="Resource" id="Resource_fg5u0"]
+script = ExtResource("7_g2ijp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjl78"]
 size = Vector2(10, 15)
@@ -276,7 +280,7 @@ _data = {
 
 [node name="PlayerCharacter" type="Node"]
 script = ExtResource("1_755o5")
-starting_components = Array[Resource]([SubResource("Resource_mhoqv"), SubResource("Resource_mkqjn"), SubResource("Resource_qfe5p"), SubResource("Resource_i7gqe")])
+starting_components = Array[Resource]([SubResource("Resource_mhoqv"), SubResource("Resource_mkqjn"), SubResource("Resource_qfe5p"), SubResource("Resource_i7gqe"), SubResource("Resource_fg5u0")])
 
 [node name="ECSCharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("3_btcb0")
@@ -295,6 +299,18 @@ visible = false
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_yjl78")
 
+[node name="Camera2D" type="Camera2D" parent="ECSCharacterBody2D"]
+position_smoothing_speed = 32.0
+
+[node name="Ui" parent="ECSCharacterBody2D" instance=ExtResource("9_ftsh0")]
+custom_minimum_size = Vector2(400, 200)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="ECSAnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_cl6lb")
 anim_player = NodePath("../AnimationPlayer")
@@ -306,5 +322,3 @@ deterministic = true
 libraries = {
 "": SubResource("AnimationLibrary_bokek")
 }
-
-[node name="EcsUi" parent="." instance=ExtResource("11_cjntf")]

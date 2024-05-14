@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InputPolling" load_steps=4 format=3 uid="uid://duefxf6xnncyi"]
+[gd_resource type="Resource" script_class="InputPollingSystem" load_steps=4 format=3 uid="uid://duefxf6xnncyi"]
 
 [ext_resource type="Script" path="res://resources/system_scripts/input_polling_system.gd" id="1_0f7kw"]
 [ext_resource type="Resource" uid="uid://cg3uctd6bdcm" path="res://resources/components/InputAction.tres" id="1_ycwfg"]

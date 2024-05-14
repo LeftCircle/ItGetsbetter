@@ -22,8 +22,8 @@ EcsCoordinator="*res://singletons/ecs/esc_coordinator.gd"
 
 [display]
 
-window/size/viewport_width=256
-window/size/viewport_height=256
+window/stretch/mode="viewport"
+window/stretch/scale=2.0
 
 [editor_plugins]
 

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Abilities" load_steps=7 format=3 uid="uid://bwlg7jwfhos12"]
+
+[ext_resource type="Script" path="res://resources/base_component_scripts/ability.gd" id="1_allxo"]
+[ext_resource type="Script" path="res://resources/component_scripts/abilities.gd" id="1_hafu3"]
+
+[sub_resource type="Resource" id="Resource_n1d2i"]
+script = ExtResource("1_allxo")
+cooldown = 1.0
+
+[sub_resource type="Resource" id="Resource_xlgrp"]
+script = ExtResource("1_allxo")
+cooldown = 1.0
+
+[sub_resource type="Resource" id="Resource_2lcqy"]
+script = ExtResource("1_allxo")
+cooldown = 1.0
+
+[sub_resource type="Resource" id="Resource_ttyhm"]
+script = ExtResource("1_allxo")
+cooldown = 1.0
+
+[resource]
+script = ExtResource("1_hafu3")
+run = SubResource("Resource_2lcqy")
+jump = SubResource("Resource_xlgrp")
+wall_jump = SubResource("Resource_ttyhm")
+attack = SubResource("Resource_n1d2i")

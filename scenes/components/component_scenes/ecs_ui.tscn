@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://brctro446cl8o"]
+
+[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_ui.gd" id="1_ec6xb"]
+[ext_resource type="PackedScene" uid="uid://cuum3b04ljjkv" path="res://scenes/ui/abilities/ability.tscn" id="2_ljgq6"]
+[ext_resource type="SpriteFrames" uid="uid://3tfia0vwsiu" path="res://resources/assets/ui/jump_ui.tres" id="3_552ei"]
+
+[node name="EcsUi" type="Control" node_paths=PackedStringArray("jump_progress_bar")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ec6xb")
+jump_progress_bar = NodePath("Jump/TextureProgressBar")
+
+[node name="Run" parent="." instance=ExtResource("2_ljgq6")]
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 124.0
+offset_right = 192.0
+offset_bottom = 124.0
+
+[node name="Jump" parent="." instance=ExtResource("2_ljgq6")]
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 123.0
+offset_right = 212.0
+offset_bottom = 123.0
+
+[node name="AnimatedSprite2D" parent="Jump" index="0"]
+sprite_frames = ExtResource("3_552ei")
+
+[editable path="Jump"]

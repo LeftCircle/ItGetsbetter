@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://df3jvb22nlvd3"]
+
+[ext_resource type="PackedScene" uid="uid://cuum3b04ljjkv" path="res://scenes/ui/abilities/ability.tscn" id="1_xoomj"]
+[ext_resource type="SpriteFrames" uid="uid://3tfia0vwsiu" path="res://resources/assets/ui/jump_ui.tres" id="2_piw4u"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchor_right = 0.216
+anchor_bottom = 0.235
+offset_right = 0.167999
+offset_bottom = -0.280014
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Run" parent="." instance=ExtResource("1_xoomj")]
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 124.0
+offset_right = 192.0
+offset_bottom = 124.0
+
+[node name="Jump" parent="." instance=ExtResource("1_xoomj")]
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 123.0
+offset_right = 212.0
+offset_bottom = 123.0
+
+[node name="AnimatedSprite2D" parent="Jump" index="0"]
+sprite_frames = ExtResource("2_piw4u")
+
+[editable path="Jump"]

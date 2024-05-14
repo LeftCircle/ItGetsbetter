@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StateSystem" load_steps=7 format=3 uid="uid://1yo0i3gemu2x"]
+
+[ext_resource type="Script" path="res://resources/system_scripts/state_system.gd" id="1_8e8pn"]
+[ext_resource type="Resource" uid="uid://bwlg7jwfhos12" path="res://resources/components/Abilities.tres" id="1_43eh0"]
+[ext_resource type="Resource" uid="uid://b6ey62hefduu3" path="res://resources/components/States.tres" id="2_6lwej"]
+[ext_resource type="Resource" uid="uid://cg3uctd6bdcm" path="res://resources/components/InputAction.tres" id="3_so3mq"]
+[ext_resource type="PackedScene" uid="uid://dv267dw57fqw5" path="res://scenes/components/component_scenes/ecs_animation_tree.tscn" id="4_cr5t2"]
+[ext_resource type="PackedScene" uid="uid://gs3af0t0mxl4" path="res://scenes/components/component_scenes/ecs_character_body_2d.tscn" id="5_26pdf"]
+
+[resource]
+script = ExtResource("1_8e8pn")
+required_components = [ExtResource("1_43eh0"), ExtResource("2_6lwej"), ExtResource("3_so3mq"), ExtResource("4_cr5t2"), ExtResource("5_26pdf")]
