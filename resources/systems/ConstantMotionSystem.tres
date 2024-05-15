@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ConstantMotionSystem" load_steps=3 format=3 uid="uid://bavyw4g6xy4e5"]
+
+[ext_resource type="PackedScene" uid="uid://e12e85bi03nl" path="res://scenes/components/component_scenes/constant_motion_comp.tscn" id="1_1bwwy"]
+[ext_resource type="Script" path="res://resources/system_scripts/constant_motion_system.gd" id="1_to2qm"]
+
+[resource]
+script = ExtResource("1_to2qm")
+required_components = [ExtResource("1_1bwwy")]

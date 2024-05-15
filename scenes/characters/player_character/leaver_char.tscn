@@ -288,9 +288,10 @@ starting_components = Array[Resource("res://resources/component.gd")]([SubResour
 [node name="ECSCharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("2_yasxu")
 max_speed = 80
-acceleration_frames = 6
-decelleration_mod = 1.5
-jump_speed = 200
+jump_speed = 240
+wall_acceleration_frames = 9
+wall_fall_speed = 20
+frames_for_wall_recent_hit_reset = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="ECSCharacterBody2D"]
 position = Vector2(0, 0.25)

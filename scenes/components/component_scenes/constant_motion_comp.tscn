@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://e12e85bi03nl"]
+
+[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/constant_motion.gd" id="1_jfp8u"]
+
+[node name="ConstantMotionComp" type="Node"]
+script = ExtResource("1_jfp8u")

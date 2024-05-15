@@ -8,9 +8,9 @@ var entities_to_remove : Array[int] = []
 
 static func trigger_jump(jump : JumpComponent, cbd : ECSCharacterBody2D) -> void:
 	cbd.velocity.y = -cbd.jump_speed
-	jump.ready = false
-	jump.countdown_can_start = false
-	jump.current_cooldown = jump.cooldown
+	#jump.ready = false
+	#jump.countdown_can_start = false
+	#jump.current_cooldown = jump.cooldown
 
 func update(delta : float) -> void:
 	for entity in entities.keys():
@@ -21,8 +21,8 @@ func update(delta : float) -> void:
 			jump.countdown_can_start = true
 		if not inputs.is_action_pressed("jump") and not cbd.velocity.y > 0:
 			cbd.velocity.y = 0
-		if jump.countdown_can_start:
-			jump.current_cooldown -= delta
+		#if jump.countdown_can_start:
+			#jump.current_cooldown -= delta
 		if jump.current_cooldown <= 0:
 			entities_to_remove.append(entity)
 			jump.ready = true

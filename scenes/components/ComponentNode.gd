@@ -1,12 +1,5 @@
-extends Control
-class_name ECSUi
-
-@export var jump_progress_bar : TextureProgressBar
-@export var run_progress_bar : TextureProgressBar
-@export var wall_jump_progress_bar : TextureProgressBar
-@export var mirror_pb : TextureProgressBar
-@export var attack_pb : TextureProgressBar
-
+extends Node
+class_name ComponentNode
 
 var class_id : StringName : set = set_class_id
 var instance_id : int
@@ -18,9 +11,8 @@ func _init() -> void:
 	_init_class_id()
 
 func _init_class_id() -> void:
-	class_id = "CUI"
+	assert(false, "Must be overwritten")
 
 func _ready() -> void:
 	var entity_id : int = get_parent().entity_id
 	EcsCoordinator.add_component(entity_id, self)
-

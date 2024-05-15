@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MirrorInputComponent" load_steps=2 format=3 uid="uid://cibobg8mj04iu"]
+
+[ext_resource type="Script" path="res://resources/component_scripts/mirror_input_ability.gd" id="1_37n3u"]
+
+[resource]
+script = ExtResource("1_37n3u")
+cooldown = 1.0

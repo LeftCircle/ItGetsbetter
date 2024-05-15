@@ -1,20 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://brctro446cl8o"]
+[gd_scene load_steps=7 format=3 uid="uid://brctro446cl8o"]
 
 [ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_ui.gd" id="1_ec6xb"]
 [ext_resource type="PackedScene" uid="uid://cuum3b04ljjkv" path="res://scenes/ui/abilities/ability.tscn" id="2_ljgq6"]
 [ext_resource type="SpriteFrames" uid="uid://3tfia0vwsiu" path="res://resources/assets/ui/jump_ui.tres" id="3_552ei"]
+[ext_resource type="SpriteFrames" uid="uid://cg5mv1f2si2l8" path="res://resources/assets/ui/wall_jump.tres" id="4_l4e0m"]
+[ext_resource type="SpriteFrames" uid="uid://mot0ecr3ioqq" path="res://resources/assets/ui/attack.tres" id="5_ncf0x"]
+[ext_resource type="SpriteFrames" uid="uid://buc5nm5inf6nh" path="res://resources/assets/ui/mirror.tres" id="6_bt7mg"]
 
-[node name="EcsUi" type="Control" node_paths=PackedStringArray("jump_progress_bar")]
+[node name="EcsUi" type="Control" node_paths=PackedStringArray("jump_progress_bar", "run_progress_bar", "wall_jump_progress_bar", "mirror_pb", "attack_pb")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ec6xb")
 jump_progress_bar = NodePath("Jump/TextureProgressBar")
+run_progress_bar = NodePath("Run/TextureProgressBar")
+wall_jump_progress_bar = NodePath("WallJump/TextureProgressBar")
+mirror_pb = NodePath("Mirror/TextureProgressBar")
+attack_pb = NodePath("Attack/TextureProgressBar")
 
 [node name="Run" parent="." instance=ExtResource("2_ljgq6")]
 offset_left = 192.0
-offset_top = 124.0
+offset_top = 123.0
 offset_right = 192.0
-offset_bottom = 124.0
+offset_bottom = 123.0
 
 [node name="Jump" parent="." instance=ExtResource("2_ljgq6")]
 offset_left = 212.0
@@ -25,4 +32,35 @@ offset_bottom = 123.0
 [node name="AnimatedSprite2D" parent="Jump" index="0"]
 sprite_frames = ExtResource("3_552ei")
 
+[node name="WallJump" parent="." instance=ExtResource("2_ljgq6")]
+offset_left = 230.0
+offset_top = 123.0
+offset_right = 230.0
+offset_bottom = 123.0
+
+[node name="AnimatedSprite2D" parent="WallJump" index="0"]
+sprite_frames = ExtResource("4_l4e0m")
+
+[node name="Attack" parent="." instance=ExtResource("2_ljgq6")]
+offset_left = 248.0
+offset_top = 123.0
+offset_right = 248.0
+offset_bottom = 123.0
+
+[node name="AnimatedSprite2D" parent="Attack" index="0"]
+sprite_frames = ExtResource("5_ncf0x")
+
+[node name="Mirror" parent="." instance=ExtResource("2_ljgq6")]
+offset_left = 266.0
+offset_top = 123.0
+offset_right = 266.0
+offset_bottom = 123.0
+
+[node name="AnimatedSprite2D" parent="Mirror" index="0"]
+sprite_frames = ExtResource("6_bt7mg")
+
+[editable path="Run"]
 [editable path="Jump"]
+[editable path="WallJump"]
+[editable path="Attack"]
+[editable path="Mirror"]
