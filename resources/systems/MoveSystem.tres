@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MoveSystem" load_steps=5 format=3 uid="uid://dtfuuggdak1mb"]
+[gd_resource type="Resource" script_class="MoveSystem" load_steps=6 format=3 uid="uid://dtfuuggdak1mb"]
 
 [ext_resource type="Script" path="res://resources/system_scripts/move_system.gd" id="1_k5nji"]
 [ext_resource type="Resource" uid="uid://cg3uctd6bdcm" path="res://resources/components/InputAction.tres" id="1_l127l"]
 [ext_resource type="PackedScene" uid="uid://gs3af0t0mxl4" path="res://scenes/components/component_scenes/ecs_character_body_2d.tscn" id="1_u3v0j"]
 [ext_resource type="PackedScene" uid="uid://dv267dw57fqw5" path="res://scenes/components/component_scenes/ecs_animation_tree.tscn" id="2_f8xj1"]
+[ext_resource type="Resource" uid="uid://b2ve804rdrccm" path="res://resources/components/InputMoveComponent.tres" id="4_lfec6"]
 
 [resource]
 script = ExtResource("1_k5nji")
-required_components = [ExtResource("1_l127l"), ExtResource("2_f8xj1"), ExtResource("1_u3v0j")]
+required_components = [ExtResource("1_l127l"), ExtResource("2_f8xj1"), ExtResource("1_u3v0j"), ExtResource("4_lfec6")]

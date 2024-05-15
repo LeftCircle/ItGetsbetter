@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="JumpComponent" load_steps=2 format=3 uid="uid://cvcdcuk06ddrj"]
+
+[ext_resource type="Script" path="res://resources/component_scripts/jump_component.gd" id="1_7n8gp"]
+
+[resource]
+script = ExtResource("1_7n8gp")
+cooldown = 1.0

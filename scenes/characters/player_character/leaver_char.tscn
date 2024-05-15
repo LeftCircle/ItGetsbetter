@@ -1,61 +1,56 @@
-[gd_scene load_steps=39 format=3 uid="uid://b2pgwoagy7ki1"]
+[gd_scene load_steps=36 format=3 uid="uid://dxbcbfakd772t"]
 
-[ext_resource type="Script" path="res://scenes/entity/entity.gd" id="1_755o5"]
-[ext_resource type="Script" path="res://resources/component_scripts/character_component.gd" id="2_7xgpt"]
-[ext_resource type="Script" path="res://resources/component_scripts/input_actions.gd" id="3_0agd7"]
-[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_character_body_2d.gd" id="3_btcb0"]
-[ext_resource type="Texture2D" uid="uid://d0uiebmk7wffb" path="res://assets/character/idle_and_walk.png" id="4_esutx"]
-[ext_resource type="Script" path="res://resources/base_component_scripts/ability.gd" id="4_wgr0o"]
-[ext_resource type="Script" path="res://resources/component_scripts/abilities.gd" id="5_31m7c"]
-[ext_resource type="Script" path="res://resources/component_scripts/jump_component.gd" id="5_mkwes"]
-[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_animation_tree.gd" id="5_t8fcu"]
-[ext_resource type="Script" path="res://resources/component_scripts/states.gd" id="6_467m6"]
-[ext_resource type="Script" path="res://resources/component_scripts/wall_jump.gd" id="7_4igqr"]
-[ext_resource type="Script" path="res://resources/component_scripts/input_move.gd" id="8_5fpct"]
-[ext_resource type="Script" path="res://resources/component_scripts/gravity_component.gd" id="9_jyxxy"]
-[ext_resource type="PackedScene" uid="uid://brctro446cl8o" path="res://scenes/components/component_scenes/ecs_ui.tscn" id="11_cjntf"]
+[ext_resource type="Script" path="res://scenes/entity/entity.gd" id="1_yauxh"]
+[ext_resource type="Script" path="res://resources/component_scripts/abilities.gd" id="2_nx3u1"]
+[ext_resource type="Script" path="res://resources/base_component_scripts/ability.gd" id="2_qbkpr"]
+[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_character_body_2d.gd" id="2_yasxu"]
+[ext_resource type="Script" path="res://resources/component_scripts/input_actions.gd" id="3_ewmcl"]
+[ext_resource type="Texture2D" uid="uid://d0uiebmk7wffb" path="res://assets/character/idle_and_walk.png" id="3_fo00w"]
+[ext_resource type="Script" path="res://resources/component_scripts/jump_component.gd" id="3_nhvj6"]
+[ext_resource type="Script" path="res://resources/component_scripts/wall_jump.gd" id="4_2kksa"]
+[ext_resource type="Script" path="res://resources/component_scripts/states.gd" id="4_di7dv"]
+[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_animation_tree.gd" id="4_ic5fa"]
+[ext_resource type="Script" path="res://resources/component_scripts/input_move.gd" id="7_guuu5"]
+[ext_resource type="Script" path="res://resources/component_scripts/gravity_component.gd" id="8_u06p7"]
 
-[sub_resource type="Resource" id="Resource_mhoqv"]
-script = ExtResource("2_7xgpt")
-
-[sub_resource type="Resource" id="Resource_mkqjn"]
-script = ExtResource("3_0agd7")
-
-[sub_resource type="Resource" id="Resource_55oge"]
-script = ExtResource("4_wgr0o")
+[sub_resource type="Resource" id="Resource_vfdxr"]
+script = ExtResource("2_qbkpr")
 cooldown = 0.0
 
-[sub_resource type="Resource" id="Resource_rxp57"]
-script = ExtResource("5_mkwes")
+[sub_resource type="Resource" id="Resource_rmrkn"]
+script = ExtResource("3_nhvj6")
 cooldown = 1.0
 
-[sub_resource type="Resource" id="Resource_8m0c2"]
-script = ExtResource("4_wgr0o")
+[sub_resource type="Resource" id="Resource_4516f"]
+script = ExtResource("2_qbkpr")
 cooldown = 0.0
 
-[sub_resource type="Resource" id="Resource_qea35"]
-script = ExtResource("7_4igqr")
+[sub_resource type="Resource" id="Resource_s186l"]
+script = ExtResource("4_2kksa")
 impulse = 250
 dash_frames = 15
 cooldown = 1.0
 
-[sub_resource type="Resource" id="Resource_qfe5p"]
-script = ExtResource("5_31m7c")
-run = SubResource("Resource_8m0c2")
-jump = SubResource("Resource_rxp57")
-wall_jump = SubResource("Resource_qea35")
-attack = SubResource("Resource_55oge")
+[sub_resource type="Resource" id="Resource_275cd"]
+script = ExtResource("2_nx3u1")
+run = SubResource("Resource_4516f")
+jump = SubResource("Resource_rmrkn")
+wall_jump = SubResource("Resource_s186l")
+attack = SubResource("Resource_vfdxr")
 
-[sub_resource type="Resource" id="Resource_i7gqe"]
-script = ExtResource("6_467m6")
+[sub_resource type="Resource" id="Resource_0slam"]
+script = ExtResource("3_ewmcl")
 
-[sub_resource type="Resource" id="Resource_ayupq"]
-script = ExtResource("8_5fpct")
+[sub_resource type="Resource" id="Resource_40lx7"]
+script = ExtResource("4_di7dv")
 
-[sub_resource type="Resource" id="Resource_2sjki"]
-script = ExtResource("9_jyxxy")
+[sub_resource type="Resource" id="Resource_0sreu"]
+script = ExtResource("7_guuu5")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjl78"]
+[sub_resource type="Resource" id="Resource_c7128"]
+script = ExtResource("8_u06p7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efn0l"]
 size = Vector2(10, 15)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d3wfg"]
@@ -80,7 +75,7 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ae0ne"]
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cl6lb"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mwgab"]
 states/Idle/node = SubResource("AnimationNodeAnimation_d3wfg")
 states/Idle/position = Vector2(425, 100)
 states/Run/node = SubResource("AnimationNodeBlendSpace1D_q7era")
@@ -286,36 +281,36 @@ _data = {
 "RunRight": SubResource("Animation_xwthh")
 }
 
-[node name="PlayerCharacter" type="Node"]
-script = ExtResource("1_755o5")
-starting_components = Array[Resource("res://resources/component.gd")]([SubResource("Resource_mhoqv"), SubResource("Resource_mkqjn"), SubResource("Resource_qfe5p"), SubResource("Resource_i7gqe"), SubResource("Resource_ayupq"), SubResource("Resource_2sjki")])
+[node name="LeaverChar" type="Node"]
+script = ExtResource("1_yauxh")
+starting_components = Array[Resource("res://resources/component.gd")]([SubResource("Resource_275cd"), SubResource("Resource_0slam"), SubResource("Resource_40lx7"), SubResource("Resource_0sreu"), SubResource("Resource_c7128")])
 
 [node name="ECSCharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("3_btcb0")
+script = ExtResource("2_yasxu")
 max_speed = 80
+acceleration_frames = 6
+decelleration_mod = 1.5
 jump_speed = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="ECSCharacterBody2D"]
 position = Vector2(0, 0.25)
-texture = ExtResource("4_esutx")
+texture = ExtResource("3_fo00w")
 hframes = 6
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ECSCharacterBody2D"]
 visible = false
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_yjl78")
+shape = SubResource("RectangleShape2D_efn0l")
 
 [node name="ECSAnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_cl6lb")
+tree_root = SubResource("AnimationNodeStateMachine_mwgab")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Run/blend_position = -0.0045045
-script = ExtResource("5_t8fcu")
+script = ExtResource("4_ic5fa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 deterministic = true
 libraries = {
 "": SubResource("AnimationLibrary_bokek")
 }
-
-[node name="EcsUi" parent="." instance=ExtResource("11_cjntf")]

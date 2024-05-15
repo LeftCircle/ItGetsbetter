@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="GravityComponent" load_steps=2 format=3 uid="uid://rmildw2euk03"]
+
+[ext_resource type="Script" path="res://resources/component_scripts/gravity_component.gd" id="1_jwkw7"]
+
+[resource]
+script = ExtResource("1_jwkw7")

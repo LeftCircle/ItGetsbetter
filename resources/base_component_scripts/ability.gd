@@ -1,10 +1,11 @@
 extends Component
 class_name Ability
 
-@export_range(0, 10, 0.1) var cooldown : float = 1.0;
+@export_range(0, 10, 0.1) var cooldown : float = 1.0
 
+var current_cooldown : float = 0
 var ready : bool = true
-var percent : int = 0
+var countdown_can_start : bool = false
 
 func _init_class_id() -> void:
 	class_id = "ABI"

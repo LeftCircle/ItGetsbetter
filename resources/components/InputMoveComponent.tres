@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="InputMoveComponent" load_steps=2 format=3 uid="uid://b2ve804rdrccm"]
+
+[ext_resource type="Script" path="res://resources/component_scripts/input_move.gd" id="1_ggxb8"]
+
+[resource]
+script = ExtResource("1_ggxb8")

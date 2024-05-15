@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GravitySystem" load_steps=4 format=3 uid="uid://eq1ba3cphhgv"]
+
+[ext_resource type="Resource" uid="uid://rmildw2euk03" path="res://resources/components/GravityComponent.tres" id="1_1x0vv"]
+[ext_resource type="Script" path="res://resources/system_scripts/GravitySystem.gd" id="1_xgi1e"]
+[ext_resource type="PackedScene" uid="uid://gs3af0t0mxl4" path="res://scenes/components/component_scenes/ecs_character_body_2d.tscn" id="2_17wqx"]
+
+[resource]
+script = ExtResource("1_xgi1e")
+required_components = [ExtResource("1_1x0vv"), ExtResource("2_17wqx")]

@@ -9,4 +9,4 @@ func update(delta) -> void:
 	for entity in entities.keys():
 		var abilities : Abilities = abilities_arr.components[abilities_arr.entity_to_index[entity]]
 		var ui : ECSUi = ui_arr.components[ui_arr.entity_to_index[entity]]
-		ui.jump_progress_bar.value = abilities.jump.percent
+		ui.jump_progress_bar.value = abilities.jump.current_cooldown / abilities.jump.cooldown * 100

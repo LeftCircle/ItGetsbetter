@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WallJumpComponent" load_steps=2 format=3 uid="uid://i66msybe3jox"]
+
+[ext_resource type="Script" path="res://resources/component_scripts/wall_jump.gd" id="1_g0v7i"]
+
+[resource]
+script = ExtResource("1_g0v7i")
+impulse = 250
+angle_off_wall_deg = -45
+cooldown = 1.0

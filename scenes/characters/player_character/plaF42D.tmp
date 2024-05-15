@@ -36,6 +36,7 @@ cooldown = 0.0
 [sub_resource type="Resource" id="Resource_qea35"]
 script = ExtResource("7_4igqr")
 impulse = 250
+angle_off_wall_deg = -45
 dash_frames = 15
 cooldown = 1.0
 

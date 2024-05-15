@@ -5,6 +5,7 @@
 
 [node name="Ability" type="Control"]
 layout_mode = 3
+anchors_preset = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_aytcy")

@@ -11,14 +11,12 @@ script = ExtResource("1_ec6xb")
 jump_progress_bar = NodePath("Jump/TextureProgressBar")
 
 [node name="Run" parent="." instance=ExtResource("2_ljgq6")]
-anchors_preset = 0
 offset_left = 192.0
 offset_top = 124.0
 offset_right = 192.0
 offset_bottom = 124.0
 
 [node name="Jump" parent="." instance=ExtResource("2_ljgq6")]
-anchors_preset = 0
 offset_left = 212.0
 offset_top = 123.0
 offset_right = 212.0

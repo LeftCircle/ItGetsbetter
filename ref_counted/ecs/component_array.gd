@@ -27,23 +27,22 @@ func insert_data(entity : int, component : Variant) -> void:
 ## When data is removed, the last component in the array is placed in the index of the component
 ## that is removed. The entity to index and index to entity maps are updated accordingly.
 func remove_data(entity : int) -> void:
-	assert(entity_to_index.has(entity), "Removing non-existent component.")
-	var index : int = entity_to_index[entity]
-	var last_entity : int = index_to_entity[size - 1]
-	if components[index].is_class("Node"):
-		components[index].queue_free()
-	components[index] = components[size - 1]
-	entity_to_index[last_entity] = index
-	index_to_entity[index] = last_entity
-	entity_to_index.erase(entity)
-	index_to_entity.erase(size - 1)
-	size -= 1
+	if entity_to_index.has(entity):
+		var index : int = entity_to_index[entity]
+		var last_entity : int = index_to_entity[size - 1]
+		if components[index].is_class("Node"):
+			components[index].queue_free()
+		components[index] = components[size - 1]
+		entity_to_index[last_entity] = index
+		index_to_entity[index] = last_entity
+		entity_to_index.erase(entity)
+		index_to_entity.erase(size - 1)
+		size -= 1
 
 ## Grabs data for a given entity, but it is slightly faster to just access the array directly.
 func get_data(entity : int) -> Variant:
 	assert(entity_to_index.has(entity), "Retrieving non-existent component.")
 	return components[entity_to_index[entity]]
-
 
 ## Removes the entity if it exists
 func entity_destroyed(entity : int) -> void:

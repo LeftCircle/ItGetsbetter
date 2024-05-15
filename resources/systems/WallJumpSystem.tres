@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WallJumpSystem" load_steps=5 format=3 uid="uid://cgsbdp7xhq016"]
+
+[ext_resource type="Resource" uid="uid://i66msybe3jox" path="res://resources/components/WallJumpComponent.tres" id="1_6u7tm"]
+[ext_resource type="Script" path="res://resources/system_scripts/wall_jump_system.gd" id="1_srks3"]
+[ext_resource type="Resource" uid="uid://cg3uctd6bdcm" path="res://resources/components/InputAction.tres" id="2_3kvhg"]
+[ext_resource type="PackedScene" uid="uid://gs3af0t0mxl4" path="res://scenes/components/component_scenes/ecs_character_body_2d.tscn" id="3_hfqby"]
+
+[resource]
+script = ExtResource("1_srks3")
+required_components = [ExtResource("1_6u7tm"), ExtResource("2_3kvhg"), ExtResource("3_hfqby")]

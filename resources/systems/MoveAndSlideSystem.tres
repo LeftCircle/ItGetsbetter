@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MoveAndSlideSystem" load_steps=3 format=3 uid="uid://df645ayxndcbr"]
+
+[ext_resource type="Script" path="res://resources/system_scripts/move_and_slide.gd" id="1_cmu6t"]
+[ext_resource type="PackedScene" uid="uid://gs3af0t0mxl4" path="res://scenes/components/component_scenes/ecs_character_body_2d.tscn" id="1_xh80r"]
+
+[resource]
+script = ExtResource("1_cmu6t")
+required_components = [ExtResource("1_xh80r")]

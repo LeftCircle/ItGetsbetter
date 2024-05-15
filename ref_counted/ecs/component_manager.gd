@@ -31,9 +31,9 @@ func remove_component(entity : int, script : Script) -> void:
 func get_component(entity : int, script : Script) -> Object:
 	return component_arrays[script].get_data(entity)
 
-func entity_destoryed(entity : int) -> void:
-	for component_array in component_arrays.values():
-		component_array.entity_destroyed(entity)
-
 func is_component_registered(script : Script) -> bool:
 	return component_arrays.has(script)
+
+func entity_destroyed(entity : int) -> void:
+	for component_array in component_arrays.values():
+		component_array.entity_destroyed(entity)
