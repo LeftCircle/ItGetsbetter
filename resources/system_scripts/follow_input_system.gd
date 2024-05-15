@@ -16,21 +16,26 @@ func update(_delta : float) -> void:
 		if mirror.mirrored:
 			old_actions.input_vector.x *= -1
 
-		if fc.n_follow_steps == 0 and abs(leader_inputs.current_action.input_vector.x) != 0:
+		if not fc.has_moved and leader_inputs.current_action.input_vector.x != 0:
 			fc.has_moved = true
+			fc.n_stop_frames = 0
 			for i in range(fc.STEPS_BEFORE_FOLLOW):
 				fc.write_input(leader_inputs.current_action)
+			print("Padding follow")
+		fc.previous_was_zero = leader_inputs.current_action.input_vector.x == 0
+		if fc.previous_was_zero and fc.has_moved:
+			fc.n_stop_frames += 1
+			if fc.n_stop_frames >= fc.STOP_FRAMES_BEFORE_RESET:
+				fc.has_moved = false
+				fc.n_stop_frames = 0
+				for i in range(fc.STEPS_BEFORE_FOLLOW):
+					fc.read_input()
+		print(fc.input_history.size())
+
 
 		follower_inputs.receive_action(old_actions)
 		fc.write_input(leader_inputs.current_action)
-		fc.n_follow_steps += 1 * int(fc.has_moved)
 
-		if fc.n_follow_steps > fc.STEPS_BEFORE_FOLLOW and abs(leader_inputs.current_action.input_vector.x) == 0 and fc.has_moved:
-			fc.n_follow_steps = 0
-			fc.write_index = posmod(fc.write_index - fc.STEPS_BEFORE_FOLLOW, fc._total_frames)
-			print("Adjusting fc frames")
-			fc.has_moved = false
-		print(fc.read_index - fc.write_index)
 
 
 

@@ -5,7 +5,7 @@ extends TileMap
 @onready var player_char = $PlayerCharacter/ECSCharacterBody2D
 
 func _ready() -> void:
-	CharacterFollowSetter.get_a_to_follow_b($LeaverChar.entity_id, $PlayerCharacter.entity_id, 3)
+	CharacterFollowSetter.get_a_to_follow_b($LeaverChar.entity_id, $PlayerCharacter.entity_id, 1)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player_char:

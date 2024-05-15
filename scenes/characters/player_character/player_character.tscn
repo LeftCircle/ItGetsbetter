@@ -292,7 +292,7 @@ starting_components = Array[Resource("res://resources/component.gd")]([SubResour
 
 [node name="ECSCharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("3_btcb0")
-max_speed = 80
+max_speed = 84
 jump_speed = 240
 wall_acceleration_frames = 9
 wall_fall_speed = 40

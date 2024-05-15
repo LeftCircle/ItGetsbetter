@@ -86,7 +86,7 @@ mirror_inputs={
 
 [physics]
 
-2d/default_gravity=600.0
+2d/default_gravity=550.0
 
 [rendering]
 
