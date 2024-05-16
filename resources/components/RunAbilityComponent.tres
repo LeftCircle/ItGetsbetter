@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="RunAbility" load_steps=2 format=3 uid="uid://dws74vk7fjc42"]
+
+[ext_resource type="Script" path="res://resources/component_scripts/run_ability_component.gd" id="1_ydhwx"]
+
+[resource]
+script = ExtResource("1_ydhwx")
+cooldown = 0.0

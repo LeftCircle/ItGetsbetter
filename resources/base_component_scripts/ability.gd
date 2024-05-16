@@ -6,6 +6,7 @@ class_name Ability
 var current_cooldown : float = 0
 var ready : bool = true
 var countdown_can_start : bool = false
+var is_active : bool = false
 
 func _init_class_id() -> void:
 	class_id = "ABI"

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AttackAbility" load_steps=2 format=3 uid="uid://d5pb8k271fgk"]
+
+[ext_resource type="Script" path="res://resources/component_scripts/attack_ability_component.gd" id="1_k051q"]
+
+[resource]
+script = ExtResource("1_k051q")
+cooldown = 1.0

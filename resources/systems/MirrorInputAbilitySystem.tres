@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MirrorInputAbilitySystem" load_steps=4 format=3 uid="uid://cnuskeyxoa1dg"]
+
+[ext_resource type="Resource" uid="uid://cibobg8mj04iu" path="res://resources/components/MirrorInputComponent.tres" id="1_bj27f"]
+[ext_resource type="Script" path="res://resources/system_scripts/mirror_input_ability_system.gd" id="1_f8s48"]
+[ext_resource type="Resource" uid="uid://cg3uctd6bdcm" path="res://resources/components/InputAction.tres" id="2_7p77x"]
+
+[resource]
+script = ExtResource("1_f8s48")
+required_components = [ExtResource("1_bj27f"), ExtResource("2_7p77x")]

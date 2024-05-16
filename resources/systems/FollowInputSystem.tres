@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="FollowInputSystem" load_steps=4 format=3 uid="uid://dodbwf13rej8b"]
+[gd_resource type="Resource" script_class="FollowInputSystem" load_steps=5 format=3 uid="uid://dodbwf13rej8b"]
 
 [ext_resource type="Resource" uid="uid://ctutsihb5c4le" path="res://resources/components/FollowComponent.tres" id="1_1bb05"]
 [ext_resource type="Script" path="res://resources/system_scripts/follow_input_system.gd" id="1_hsllv"]
 [ext_resource type="Resource" uid="uid://cg3uctd6bdcm" path="res://resources/components/InputAction.tres" id="2_4rdbm"]
+[ext_resource type="Resource" uid="uid://cibobg8mj04iu" path="res://resources/components/MirrorInputComponent.tres" id="3_p3rpl"]
 
 [resource]
 script = ExtResource("1_hsllv")
-required_components = [ExtResource("1_1bb05"), ExtResource("2_4rdbm")]
+required_components = [ExtResource("1_1bb05"), ExtResource("2_4rdbm"), ExtResource("3_p3rpl")]

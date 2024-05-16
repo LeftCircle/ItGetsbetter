@@ -1,18 +1,16 @@
-[gd_scene load_steps=39 format=3 uid="uid://b2pgwoagy7ki1"]
+[gd_scene load_steps=34 format=3 uid="uid://b2pgwoagy7ki1"]
 
 [ext_resource type="Script" path="res://scenes/entity/entity.gd" id="1_755o5"]
 [ext_resource type="Script" path="res://resources/component_scripts/character_component.gd" id="2_7xgpt"]
 [ext_resource type="Script" path="res://resources/component_scripts/input_actions.gd" id="3_0agd7"]
 [ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_character_body_2d.gd" id="3_btcb0"]
 [ext_resource type="Texture2D" uid="uid://d0uiebmk7wffb" path="res://assets/character/idle_and_walk.png" id="4_esutx"]
-[ext_resource type="Script" path="res://resources/base_component_scripts/ability.gd" id="4_wgr0o"]
-[ext_resource type="Script" path="res://resources/component_scripts/abilities.gd" id="5_31m7c"]
 [ext_resource type="Script" path="res://resources/component_scripts/jump_component.gd" id="5_mkwes"]
 [ext_resource type="Script" path="res://scenes/components/component_scene_scripts/ecs_animation_tree.gd" id="5_t8fcu"]
 [ext_resource type="Script" path="res://resources/component_scripts/states.gd" id="6_467m6"]
 [ext_resource type="Script" path="res://resources/component_scripts/wall_jump.gd" id="7_4igqr"]
-[ext_resource type="Script" path="res://resources/component_scripts/input_move.gd" id="8_5fpct"]
 [ext_resource type="Script" path="res://resources/component_scripts/gravity_component.gd" id="9_jyxxy"]
+[ext_resource type="Script" path="res://resources/component_scripts/run_ability_component.gd" id="10_kcaht"]
 [ext_resource type="PackedScene" uid="uid://brctro446cl8o" path="res://scenes/components/component_scenes/ecs_ui.tscn" id="11_cjntf"]
 
 [sub_resource type="Resource" id="Resource_mhoqv"]
@@ -21,39 +19,25 @@ script = ExtResource("2_7xgpt")
 [sub_resource type="Resource" id="Resource_mkqjn"]
 script = ExtResource("3_0agd7")
 
-[sub_resource type="Resource" id="Resource_55oge"]
-script = ExtResource("4_wgr0o")
-cooldown = 0.0
+[sub_resource type="Resource" id="Resource_i7gqe"]
+script = ExtResource("6_467m6")
 
-[sub_resource type="Resource" id="Resource_rxp57"]
+[sub_resource type="Resource" id="Resource_2sjki"]
+script = ExtResource("9_jyxxy")
+
+[sub_resource type="Resource" id="Resource_52qpi"]
 script = ExtResource("5_mkwes")
 cooldown = 1.0
 
-[sub_resource type="Resource" id="Resource_8m0c2"]
-script = ExtResource("4_wgr0o")
-cooldown = 0.0
-
-[sub_resource type="Resource" id="Resource_qea35"]
+[sub_resource type="Resource" id="Resource_51gi0"]
 script = ExtResource("7_4igqr")
 impulse = 250
 dash_frames = 15
 cooldown = 1.0
 
-[sub_resource type="Resource" id="Resource_qfe5p"]
-script = ExtResource("5_31m7c")
-run = SubResource("Resource_8m0c2")
-jump = SubResource("Resource_rxp57")
-wall_jump = SubResource("Resource_qea35")
-attack = SubResource("Resource_55oge")
-
-[sub_resource type="Resource" id="Resource_i7gqe"]
-script = ExtResource("6_467m6")
-
-[sub_resource type="Resource" id="Resource_ayupq"]
-script = ExtResource("8_5fpct")
-
-[sub_resource type="Resource" id="Resource_2sjki"]
-script = ExtResource("9_jyxxy")
+[sub_resource type="Resource" id="Resource_mtiur"]
+script = ExtResource("10_kcaht")
+cooldown = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjl78"]
 size = Vector2(10, 15)
@@ -288,7 +272,7 @@ _data = {
 
 [node name="PlayerCharacter" type="Node"]
 script = ExtResource("1_755o5")
-starting_components = Array[Resource("res://resources/component.gd")]([SubResource("Resource_mhoqv"), SubResource("Resource_mkqjn"), SubResource("Resource_qfe5p"), SubResource("Resource_i7gqe"), SubResource("Resource_ayupq"), SubResource("Resource_2sjki")])
+starting_components = Array[Resource("res://resources/component.gd")]([SubResource("Resource_mhoqv"), SubResource("Resource_mkqjn"), SubResource("Resource_i7gqe"), SubResource("Resource_2sjki"), SubResource("Resource_52qpi"), SubResource("Resource_51gi0"), SubResource("Resource_mtiur")])
 
 [node name="ECSCharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("3_btcb0")

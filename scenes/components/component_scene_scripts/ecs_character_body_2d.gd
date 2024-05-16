@@ -8,7 +8,7 @@ class_name ECSCharacterBody2D
 @export var max_fall_speed : int = 180
 @export_range(1, 60) var wall_acceleration_frames : int : set = set_wall_acceleration_frames
 @export var wall_fall_speed : int : set = set_wall_fall_speed
-@export var frames_for_wall_recent_hit_reset = 4
+@export var frames_for_wall_recent_hit_reset = 6
 
 var wall_acceleration : float
 var acceleration : float
@@ -45,7 +45,6 @@ func _init_class_id() -> void:
 	class_id = "CBD"
 
 func _ready() -> void:
-	print("Player character ready")
 	var entity_id : int = get_parent().entity_id
 	EcsCoordinator.add_component(entity_id, self)
 

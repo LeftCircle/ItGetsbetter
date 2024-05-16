@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AttackAbilitySystem" load_steps=6 format=3 uid="uid://depkfyxdirgde"]
+
+[ext_resource type="PackedScene" uid="uid://dsc8a88b35d1t" path="res://scenes/entity/vfx/fire_projectile.tscn" id="1_i8du7"]
+[ext_resource type="Resource" uid="uid://d5pb8k271fgk" path="res://resources/components/AttackAbilityComponent.tres" id="1_u6hl4"]
+[ext_resource type="Script" path="res://resources/system_scripts/attack_ability_system.gd" id="1_w5bdt"]
+[ext_resource type="Resource" uid="uid://cg3uctd6bdcm" path="res://resources/components/InputAction.tres" id="2_3p8jx"]
+[ext_resource type="PackedScene" uid="uid://gs3af0t0mxl4" path="res://scenes/components/component_scenes/ecs_character_body_2d.tscn" id="3_oumtu"]
+
+[resource]
+script = ExtResource("1_w5bdt")
+projectile_scene = ExtResource("1_i8du7")
+required_components = [ExtResource("1_u6hl4"), ExtResource("2_3p8jx"), ExtResource("3_oumtu")]

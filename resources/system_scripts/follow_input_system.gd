@@ -3,13 +3,13 @@ class_name FollowInputSystem
 
 var input_arr : ComponentArray = EcsCoordinator.get_component_array(InputAction)
 var follow_arr : ComponentArray = EcsCoordinator.get_component_array(FollowComponent)
-var abilities_arr : ComponentArray = EcsCoordinator.get_component_array(Abilities)
+var abilities_arr : ComponentArray = EcsCoordinator.get_component_array(MirrorInputComponent)
 
 
 func update(_delta : float) -> void:
 	for entity in entities.keys():
 		var follower_inputs : InputAction = input_arr.components[input_arr.entity_to_index[entity]]
-		var mirror : MirrorInputComponent = abilities_arr.components[abilities_arr.entity_to_index[entity]].mirror_inputs
+		var mirror : MirrorInputComponent = abilities_arr.components[abilities_arr.entity_to_index[entity]]
 		var fc : FollowComponent = follow_arr.components[follow_arr.entity_to_index[entity]]
 		var leader_inputs : InputAction = input_arr.components[input_arr.entity_to_index[fc.entity_to_follow]]
 		var old_actions : SingleFrameAction = fc.read_input()
@@ -21,7 +21,6 @@ func update(_delta : float) -> void:
 			fc.n_stop_frames = 0
 			for i in range(fc.STEPS_BEFORE_FOLLOW):
 				fc.write_input(leader_inputs.current_action)
-			print("Padding follow")
 		fc.previous_was_zero = leader_inputs.current_action.input_vector.x == 0
 		if fc.previous_was_zero and fc.has_moved:
 			fc.n_stop_frames += 1
@@ -30,8 +29,6 @@ func update(_delta : float) -> void:
 				fc.n_stop_frames = 0
 				for i in range(fc.STEPS_BEFORE_FOLLOW):
 					fc.read_input()
-		print(fc.input_history.size())
-
 
 		follower_inputs.receive_action(old_actions)
 		fc.write_input(leader_inputs.current_action)
