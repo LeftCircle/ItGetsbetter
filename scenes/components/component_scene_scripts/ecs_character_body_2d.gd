@@ -48,3 +48,9 @@ func _ready() -> void:
 	var entity_id : int = get_parent().entity_id
 	EcsCoordinator.add_component(entity_id, self)
 
+func _on_death_collision_area_entered(area: Area2D) -> void:
+	print("Death")
+
+
+func _on_death_collision_body_entered(body: Node2D) -> void:
+	print("Death from body entered")

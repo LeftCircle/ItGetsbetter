@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckgs3aidyyk3c"]
+[gd_scene load_steps=6 format=3 uid="uid://ckgs3aidyyk3c"]
 
 [ext_resource type="TileSet" uid="uid://85mggewfghah" path="res://resources/assets/environment/caves_of_gallet_tileset.tres" id="1_5bckn"]
 [ext_resource type="Script" path="res://scenes/rooms/first_room.gd" id="2_2t1j3"]
 [ext_resource type="PackedScene" uid="uid://b2pgwoagy7ki1" path="res://scenes/characters/player_character/player_character.tscn" id="2_84i47"]
 [ext_resource type="PackedScene" uid="uid://dxbcbfakd772t" path="res://scenes/characters/player_character/leaver_char.tscn" id="4_0wnq4"]
+[ext_resource type="PackedScene" uid="uid://brctro446cl8o" path="res://scenes/components/component_scenes/ecs_ui.tscn" id="5_ip6as"]
 
 [node name="FirstRoom" type="TileMap"]
 tile_set = ExtResource("1_5bckn")
@@ -20,6 +21,16 @@ position = Vector2(24, 240)
 
 [node name="ECSCharacterBody2D" parent="LeaverChar" index="0"]
 position = Vector2(0, 240)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(217, 152)
+zoom = Vector2(1.75, 1.75)
+
+[node name="EcsUi" parent="Camera2D" instance=ExtResource("5_ip6as")]
+offset_left = -73.0
+offset_top = 48.0
+offset_right = -73.0
+offset_bottom = 48.0
 
 [editable path="PlayerCharacter"]
 [editable path="LeaverChar"]

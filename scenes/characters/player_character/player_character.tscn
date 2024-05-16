@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://resources/component_scripts/wall_jump.gd" id="7_4igqr"]
 [ext_resource type="Script" path="res://resources/component_scripts/gravity_component.gd" id="9_jyxxy"]
 [ext_resource type="Script" path="res://resources/component_scripts/run_ability_component.gd" id="10_kcaht"]
-[ext_resource type="PackedScene" uid="uid://brctro446cl8o" path="res://scenes/components/component_scenes/ecs_ui.tscn" id="11_cjntf"]
 
 [sub_resource type="Resource" id="Resource_mhoqv"]
 script = ExtResource("2_7xgpt")
@@ -41,6 +40,9 @@ cooldown = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjl78"]
 size = Vector2(10, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnt7f"]
+size = Vector2(8, 11)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d3wfg"]
 animation = &"Idle"
@@ -292,6 +294,14 @@ visible = false
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_yjl78")
 
+[node name="DeathCollision" type="Area2D" parent="ECSCharacterBody2D"]
+collision_layer = 3
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ECSCharacterBody2D/DeathCollision"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bnt7f")
+
 [node name="ECSAnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_cl6lb")
 anim_player = NodePath("../AnimationPlayer")
@@ -304,4 +314,5 @@ libraries = {
 "": SubResource("AnimationLibrary_bokek")
 }
 
-[node name="EcsUi" parent="." instance=ExtResource("11_cjntf")]
+[connection signal="area_entered" from="ECSCharacterBody2D/DeathCollision" to="ECSCharacterBody2D" method="_on_death_collision_area_entered"]
+[connection signal="body_entered" from="ECSCharacterBody2D/DeathCollision" to="ECSCharacterBody2D" method="_on_death_collision_body_entered"]

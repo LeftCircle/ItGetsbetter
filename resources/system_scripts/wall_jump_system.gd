@@ -9,8 +9,6 @@ var jump_arr : ComponentArray = EcsCoordinator.get_component_array(WallJumpCompo
 
 func trigger_walljump(wall_jump : WallJumpComponent, cbd : ECSCharacterBody2D) -> void:
 	var wall_norm : Vector2 = cbd.last_wall_normal
-	print("wall norm: ", wall_norm)
-	print("Cbd = %s walljump = %s" % [cbd, wall_jump])
 	var deg = angle_off_wall_deg * wall_norm.x
 	wall_jump.bounce_dir = wall_norm.rotated(deg_to_rad(deg))
 	cbd.velocity = wall_jump.bounce_dir * wall_jump.impulse

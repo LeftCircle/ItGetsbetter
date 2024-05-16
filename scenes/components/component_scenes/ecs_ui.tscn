@@ -7,7 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://mot0ecr3ioqq" path="res://resources/assets/ui/attack.tres" id="5_ncf0x"]
 [ext_resource type="SpriteFrames" uid="uid://buc5nm5inf6nh" path="res://resources/assets/ui/mirror.tres" id="6_bt7mg"]
 
-[node name="EcsUi" type="Control" node_paths=PackedStringArray("jump_progress_bar", "run_progress_bar", "wall_jump_progress_bar", "mirror_pb", "attack_pb")]
+[node name="EcsUi" type="Control" node_paths=PackedStringArray("jump_progress_bar", "run_progress_bar", "wall_jump_progress_bar", "mirror_pb", "attack_pb") groups=["HUD"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ec6xb")
