@@ -14,7 +14,8 @@ func update(_delta):
 		var inputs : InputAction = inputs_arr.components[inputs_arr.entity_to_index[entity]]
 		if inputs.current_action.input_vector.x != 0:
 			set_blend_pos(anim_tree, inputs.current_action.input_vector.x)
-		elif inputs.current_action.input_vector.x != 0:
+
+		if inputs.current_action.input_vector.x != 0:
 			states.current_state = States.RUNNING
 			play_if_not_already(anim_tree, "Run")
 		elif (!cbd.is_on_floor() and !cbd.is_on_wall()):

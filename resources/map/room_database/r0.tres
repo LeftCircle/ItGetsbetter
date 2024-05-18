@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RoomDBO" load_steps=3 format=3 uid="uid://yc3wie672liq"]
+
+[ext_resource type="Script" path="res://resources/map/room.gd" id="1_1nxkp"]
+[ext_resource type="PackedScene" uid="uid://bbytqihdqvjjj" path="res://scenes/rooms/spawn.tscn" id="1_qll4n"]
+
+[resource]
+script = ExtResource("1_1nxkp")
+room_id = 0
+scene = ExtResource("1_qll4n")

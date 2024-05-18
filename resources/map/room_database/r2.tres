@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RoomDBO" load_steps=3 format=3 uid="uid://cywu0h7ojrnpo"]
+
+[ext_resource type="PackedScene" uid="uid://ce8i1mghlb5t1" path="res://scenes/levels/rooms/water_challenge.tscn" id="1_1r2by"]
+[ext_resource type="Script" path="res://resources/map/room.gd" id="1_m3eps"]
+
+[resource]
+script = ExtResource("1_m3eps")
+room_id = 2
+scene = ExtResource("1_1r2by")

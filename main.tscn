@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bf1uy5e8fpjyq"]
 
-[ext_resource type="PackedScene" uid="uid://bbytqihdqvjjj" path="res://scenes/rooms/spawn.tscn" id="1_6sm2i"]
+[ext_resource type="PackedScene" uid="uid://bbytqihdqvjjj" path="res://scenes/levels/rooms/spawn.tscn" id="1_6sm2i"]
 [ext_resource type="Script" path="res://main.gd" id="1_amh8m"]
 
 [node name="Main" type="Node2D"]

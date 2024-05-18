@@ -18,7 +18,6 @@ func destroy_entity(entity: int) -> void:
 
 func register_component(component: Object) -> void:
 	component_manager.register_component(component.class_id, component.get_script())
-	print("Registered %s" % [component.class_id])
 
 func add_component(entity: int, component: Object) -> void:
 	component_manager.add_component(entity, component)

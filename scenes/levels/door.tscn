@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyl86eovnvu3g"]
+
+[ext_resource type="Script" path="res://scenes/levels/door.gd" id="1_tiv28"]
+[ext_resource type="Texture2D" uid="uid://b5uvoqm4a74qo" path="res://icon.svg" id="2_1uyly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tne3k"]
+size = Vector2(28, 45)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_tiv28")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tne3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.262745)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_1uyly")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DoorDBO" load_steps=2 format=3 uid="uid://b64iu5exodik7"]
+
+[ext_resource type="Script" path="res://resources/map/door.gd" id="1_igejt"]
+
+[resource]
+script = ExtResource("1_igejt")
+from_room_id = 1
+to_room_id = 0
