@@ -3,9 +3,9 @@ extends BaseRoom
 @onready var spawn : Vector2 = $SpawnPosition.global_position
 
 func _ready() -> void:
-	super._ready()
 	EcsCoordinator.get_component(leader.entity_id, ECSCharacterBody2D).global_position = spawn
 	EcsCoordinator.get_component(follower.entity_id, ECSCharacterBody2D).global_position = spawn - Vector2(-10, 0)
+	super._ready()
 
 
 #func _ready() -> void:

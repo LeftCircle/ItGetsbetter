@@ -1,7 +1,7 @@
 extends GutTest
 
 var main_character_path : String = "res://scenes/characters/player_character/player_character.tscn"
-var other_character_path : String = "res://scenes/characters/player_character/leaver_char.tscn"
+var other_character_path : String = "res://scenes/characters/player_character/follower_char.tscn"
 
 func test_get_character_to_follow_another() -> void:
 	var main_char = add_child_autoqfree(load(main_character_path).instantiate())

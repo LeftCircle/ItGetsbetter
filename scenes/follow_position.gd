@@ -1,5 +1,5 @@
 extends Node
-class_name FollowPositionComponent
+#class_name FollowPositionComponent
 
 @export_range(0, 300, 1) var frames_to_wait : int = 1
 @export var obj_to_follow : Node

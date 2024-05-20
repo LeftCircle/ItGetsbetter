@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0pfgjvmcayhi"]
+[gd_scene load_steps=15 format=3 uid="uid://d0pfgjvmcayhi"]
 
 [ext_resource type="Script" path="res://scenes/entity/entity.gd" id="1_ve3x1"]
 [ext_resource type="Texture2D" uid="uid://bbp7k2ucwdfl0" path="res://assets/character/ghost-idle.png" id="2_26h8t"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqkvyyfw3xs1v" path="res://assets/vfx/Particles/light_03.png" id="2_y8ws6"]
 [ext_resource type="Shader" path="res://resources/assets/shaders/distort.gdshader" id="3_lge54"]
 [ext_resource type="Texture2D" uid="uid://cqjxgbaxm601c" path="res://assets/vfx/Particles/flame_03.png" id="3_qsvjx"]
+[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/follow_position_component.gd" id="7_2qsyu"]
 
 [sub_resource type="Curve" id="Curve_w04lg"]
 _data = [Vector2(0.00769231, 1), 0.0, 0.0, 0, 0, Vector2(0.653846, 0.626198), 0.0, 0.0, 0, 0, Vector2(0.988462, 0.034345), 0.0, 0.0, 0, 0]
@@ -78,3 +79,7 @@ hframes = 8
 visible = false
 position = Vector2(-1, 4.5)
 shape = SubResource("RectangleShape2D_jc6rq")
+
+[node name="FollowPositionComponent" type="Node" parent="." node_paths=PackedStringArray("node_to_set")]
+script = ExtResource("7_2qsyu")
+node_to_set = NodePath("../ECSCharacterBody2D")

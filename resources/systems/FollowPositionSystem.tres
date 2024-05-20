@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="FollowPositionSystem" load_steps=3 format=3 uid="uid://du7jdngrcm33n"]
+
+[ext_resource type="Script" path="res://resources/system_scripts/follow_position_system.gd" id="1_6fl7w"]
+[ext_resource type="PackedScene" uid="uid://bum1yllw5k8g1" path="res://scenes/components/component_scenes/follow_position_component.tscn" id="1_h2dp7"]
+
+[resource]
+script = ExtResource("1_6fl7w")
+required_components = [ExtResource("1_h2dp7")]

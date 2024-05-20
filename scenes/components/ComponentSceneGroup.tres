@@ -7,4 +7,4 @@ script = ExtResource("1_28aqg")
 base_folder = "res://scenes/components/component_scenes"
 includes = Array[String](["*.tscn"])
 excludes = Array[String]([])
-paths = Array[String](["res://scenes/components/component_scenes/constant_motion_comp.tscn", "res://scenes/components/component_scenes/ecs_animation_tree.tscn", "res://scenes/components/component_scenes/ecs_character_body_2d.tscn", "res://scenes/components/component_scenes/ecs_ui.tscn"])
+paths = Array[String](["res://scenes/components/component_scenes/constant_motion_comp.tscn", "res://scenes/components/component_scenes/ecs_animation_tree.tscn", "res://scenes/components/component_scenes/ecs_character_body_2d.tscn", "res://scenes/components/component_scenes/ecs_ui.tscn", "res://scenes/components/component_scenes/follow_position_component.tscn", "res://scenes/components/component_scenes/position_history_component.tscn"])

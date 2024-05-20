@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjb5xogcq6p6h"]
+
+[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/position_history_component.gd" id="1_mtim0"]
+
+[node name="PositionHistoryComponent" type="Node"]
+script = ExtResource("1_mtim0")

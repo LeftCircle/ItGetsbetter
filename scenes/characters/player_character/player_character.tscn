@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b2pgwoagy7ki1"]
+[gd_scene load_steps=35 format=3 uid="uid://b2pgwoagy7ki1"]
 
 [ext_resource type="Script" path="res://scenes/entity/entity.gd" id="1_755o5"]
 [ext_resource type="Script" path="res://resources/component_scripts/character_component.gd" id="2_7xgpt"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://resources/component_scripts/wall_jump.gd" id="7_4igqr"]
 [ext_resource type="Script" path="res://resources/component_scripts/gravity_component.gd" id="9_jyxxy"]
 [ext_resource type="Script" path="res://resources/component_scripts/run_ability_component.gd" id="10_kcaht"]
+[ext_resource type="Script" path="res://scenes/components/component_scene_scripts/position_history_component.gd" id="12_a5r0g"]
 
 [sub_resource type="Resource" id="Resource_mhoqv"]
 script = ExtResource("2_7xgpt")
@@ -299,6 +300,7 @@ collision_layer = 3
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ECSCharacterBody2D/DeathCollision"]
+visible = false
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_bnt7f")
 
@@ -313,6 +315,10 @@ deterministic = true
 libraries = {
 "": SubResource("AnimationLibrary_bokek")
 }
+
+[node name="PositionHistoryComponent" type="Node" parent="." node_paths=PackedStringArray("node_to_track")]
+script = ExtResource("12_a5r0g")
+node_to_track = NodePath("../ECSCharacterBody2D")
 
 [connection signal="area_entered" from="ECSCharacterBody2D/DeathCollision" to="ECSCharacterBody2D" method="_on_death_collision_area_entered"]
 [connection signal="body_entered" from="ECSCharacterBody2D/DeathCollision" to="ECSCharacterBody2D" method="_on_death_collision_body_entered"]
